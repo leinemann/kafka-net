@@ -65,7 +65,7 @@
     ///  /consumers/[group_id]/offsets/[topic]/[broker_id-partition_id] --> offset_counter_value
     ///  Each consumer tracks the offset of the latest message consumed for each partition.
     /// </summary>
-    internal class ZookeeperConsumerConnector : IConsumerConnector
+    public class ZookeeperConsumerConnector : IConsumerConnector
     {
         public static readonly FetchedDataChunk ShutdownCommand = new FetchedDataChunk(null, null, -1L);
 

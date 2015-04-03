@@ -13,6 +13,9 @@
 
     using ZooKeeperNet;
 
+    using System.Linq;
+
+
     public class ZkConnection : IZkConnection
     {
         private static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -100,7 +103,7 @@
 
         public List<string> GetChildren(string path, bool watch) 
         {
-            return this._zk.GetChildren(path, watch);
+            return this._zk.GetChildren(path, watch).ToList<string>();
         }
 
         public byte[] ReadData(string path, Stat stat, bool watch) 
